@@ -3,6 +3,7 @@
 <meta charset="UTF-8">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+<title>ARG</title>
 <style>
 h1{
 font-family: 'Russo One', sans-serif;
@@ -10,23 +11,64 @@ color: #F58941;
 }
 body{
 background-color: ffd384;
-}
-.flex-container {
-    height: 100%;
+margin: 0;
     padding: 0;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
 }
-.ro
+.inline { 
+display: inline-block;
+}
+div{
+margin-top: 15%;
+}
+img{
+border-color: #F58941;
+border-style: solid; 
+border-width: 5px;
+border-radius: 15px;
+width: 430px;
+}
+input{
+color: #F58941;
+background-color: ffd384;
+border-color: #F58941;
+border-style:solid;
+border-width: 5px;
+border-radius: 15px;
+font-family: 'Russo One', sans-serif;
+margin-top: 30px;
+}
+input:focus {outline:none!important;}
 </style>
+<script>
+    function checkAnswers(){
+        Student_answer = document.querySelector('[name="clave1"]').value
+        Teacher_answer = "Скамейка"
+	Teacher_answer2 = "скамейка"
+	
+	if (Student_answer.length == 0 || Teacher_answer.length == 0) {
+        document.getElementById("test").innerHTML = "Введите ответ в поле ниже";
+ return false;
+        }
+        if (Student_answer === Teacher_answer || Student_answer === Teacher_answer2) {
+            document.getElementById("test").innerHTML = "https://google.com";
+        } else {
+           document.getElementById("test").innerHTML = Student_answer+"? Неверно";
+        }
+    }
+    </script>
 </head>
 <body>
-<div class="flex-container">
-<h1>Белова - топ?</h1>
-<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-<lottie-player src="https://assets8.lottiefiles.com/animated_stickers/lf_tgs_g2hxrtvo.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
+<div class="inline">
+<h1 id="test">Из какой серии этот кадр?</h1>
+<img src="scam.jpg" alt="">
+ <form action="" name="f1" onsubmit >
+     <input type="text" name="clave1" size="45%">
+      <input type="button" value="Проверить" onClick="checkAnswers()">
 </div>
+<div2 class="inline">
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<lottie-player src="https://assets8.lottiefiles.com/animated_stickers/lf_tgs_g2hxrtvo.json" background="transparent" speed="0.6" style="width: 200px; height: 200px;" loop="" autoplay=""></lottie-player>
+</div2>
 </body>
 </html>
